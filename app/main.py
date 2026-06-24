@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import psycopg2
 import os
+import time
 
 app = FastAPI()
 
@@ -13,8 +14,22 @@ def get_connection():
         password=os.environ.get("DB_PASSWORD")
     )
 
+def wait_for_db():
+    retries = 10
+    while retries > 0:
+        try:
+            conn = get_connection()
+            conn.close()
+            return True
+        except Exception:
+            retries -= 1
+            time.sleep(3)
+    return False
+
 @app.on_event("startup")
 def startup():
+    if not wait_for_db():
+        raise Exception("Could not connect to database after retries")
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
