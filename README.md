@@ -10,7 +10,7 @@ https://hub.docker.com/r/chitramittal/nagp-api
 http://34.132.12.144/employees
 
 ## Screen Recording
-https://nagarro-my.sharepoint.com/:f:/p/chitra_mittal/IgBQvuQyeoIOSr_dQ37dWdLHAaa8Fm1n73rxdrvDmrnL9LU?tdid=81bb23ea-83f2-4a1c-94cd-6921ea1f1866
+https://nagarro-my.sharepoint.com/:v:/r/personal/chitra_mittal_nagarro_com/Documents/Videos/Clipchamp/NAGP_k8s_assignment/Exports/NAGP_k8s_assignment.mp4?csf=1&web=1&e=Gfbdhp
 
 ## Project Structure
 - `app/` - FastAPI application source code
